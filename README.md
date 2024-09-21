@@ -1,4 +1,4 @@
-# Sartch - In-Memory Data Store with Go
+# Redis with Go
 
 ## 1. In-Memory Data Store
 Sartch stores all data in memory, ensuring lightning-fast read and write operations. It's ideal for use cases that demand real-time performance, such as caching and session storage.
