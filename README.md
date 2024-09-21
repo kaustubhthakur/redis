@@ -1,5 +1,29 @@
-In-Memory Data Store: Like Redis, Sartch stores data in memory, allowing for fast read and write operations, making it suitable for caching, message brokering, and session storage.
-Concurrency in Go: Go’s goroutines enable handling thousands of concurrent connections efficiently. Sartch likely uses this feature to manage Redis commands and client connections.
-Data Structures: Redis supports a variety of data structures like strings, hashes, lists, sets, and sorted sets. A Sartch build using Go would implement these using Go’s native data structures and efficient memory management.
-Persistence: Redis can persist data either by periodically saving snapshots of the dataset to disk (RDB) or logging every write operation (AOF). Sartch may replicate this persistence model in Go using Go’s I/O libraries and filesystem abstractions.
-Network Handling: Redis is known for its lightweight communication protocol. Sartch in Go would handle network interactions through Go's net package, managing TCP connections and supporting commands over the RESP (REdis Serialization Protocol).
+# Sartch - In-Memory Data Store with Go
+
+## 1. In-Memory Data Store
+Sartch stores all data in memory, ensuring lightning-fast read and write operations. It's ideal for use cases that demand real-time performance, such as caching and session storage.
+
+## 2. Concurrency with Go
+Sartch leverages Go's built-in goroutines to handle thousands of concurrent connections effortlessly. This design makes Sartch highly scalable and efficient in managing client requests and commands.
+
+## 3. Data Structures
+Sartch supports essential Redis-like data structures:
+
+- **Strings**: For key-value storage
+- **Hashes**: For storing collections of key-value pairs
+- **Lists**: For ordered lists of strings
+- **Sets**: For unordered collections of unique strings
+- **Sorted Sets**: For sorted collections of unique strings with scores
+
+These data structures are implemented using Go's native types, ensuring efficient memory usage and fast operations.
+
+## 4. Persistence
+Sartch offers two methods for data persistence:
+
+- **RDB (Redis Database)**: Periodically saves snapshots of the dataset to disk.
+- **AOF (Append Only File)**: Logs every write operation for data recovery.
+
+This ensures data durability, preventing data loss even in the event of a server crash.
+
+## 5. Lightweight Communication Protocol
+Sartch implements Redis's lightweight communication protocol, **RESP** (REdis Serialization Protocol), for client-server communication. It manages TCP connections efficiently using Go’s `net` package, ensuring low-latency interactions with minimal overhead.
