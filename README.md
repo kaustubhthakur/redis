@@ -1,0 +1,5 @@
+In-Memory Data Store: Like Redis, Sartch stores data in memory, allowing for fast read and write operations, making it suitable for caching, message brokering, and session storage.
+Concurrency in Go: Go’s goroutines enable handling thousands of concurrent connections efficiently. Sartch likely uses this feature to manage Redis commands and client connections.
+Data Structures: Redis supports a variety of data structures like strings, hashes, lists, sets, and sorted sets. A Sartch build using Go would implement these using Go’s native data structures and efficient memory management.
+Persistence: Redis can persist data either by periodically saving snapshots of the dataset to disk (RDB) or logging every write operation (AOF). Sartch may replicate this persistence model in Go using Go’s I/O libraries and filesystem abstractions.
+Network Handling: Redis is known for its lightweight communication protocol. Sartch in Go would handle network interactions through Go's net package, managing TCP connections and supporting commands over the RESP (REdis Serialization Protocol).
